@@ -1,8 +1,7 @@
 ---
 layout  : default
-title   : "new media design and development I"
+title   : "Genius New Media Design & Development I"
 ---
 
-TOP KEK
-
----
+GENIUS
+------

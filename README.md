@@ -1,2 +1,2 @@
-# PietVlem.github.io
-My personal wicked webspace!
+# drdynscript.github.io
+My personal wicked webspace
