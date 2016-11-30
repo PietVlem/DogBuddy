@@ -104,11 +104,13 @@ main{
       }
 
       h1{
+        height: 100%;
         font-size: 56pt;
         float: left;
         font-weight: 700;
         text-align: center;
-        padding: 5% 10% 0% 10%;
+        padding-left: 10%;
+        padding-top: 3%;
       }
     }
 
