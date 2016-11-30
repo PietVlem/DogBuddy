@@ -94,20 +94,21 @@ main{
       color: white;
       font-family: 'Lato', sans-serif;
       text-transform: uppercase;
+      padding:10%;
+      box-sizing: border-box;
 
       img{
         display: block;
         float: left;
-        height: 50%;
-        margin: 10% 10% 0% 10%;
+        height: 100%;
       }
 
       h1{
         font-size: 56pt;
         float: left;
-        padding-top: 15%;
         font-weight: 700;
         text-align: center;
+        padding: 5% 10% 0% 10%;
       }
     }
 
