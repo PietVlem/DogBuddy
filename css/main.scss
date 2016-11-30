@@ -4,88 +4,14 @@
 
 // 1. Configuration and helpers
 @import 'abstracts/variables';
-
 // 2. Vendors
-
 // 3. Base stuff
-
 // 4. Layout-related sections
-
 // 5. Components
-
 // 6. Page-specific styles
-
 // 7. Themes
 
 
-// JUST A TEST: NOT DONE!
+@import "abstracts/mobile";
 
 
-//overal
-*{
-  margin: 0px;
-  padding: 0px;
-}
-
-
-//text
-p{
-  font-family: Lato;
-  font-size: 14pt;
-}
-
-//index
-.index_page{
-  height: 100vh;
-  width: 100%;
-  background-color: $beige;
-}
-#inlogForm{
-  position: absolute;
-  box-sizing: border-box;
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-  top: 50%;
-  margin-top: -552px;
-  margin-left: 10%;
-  img{
-    width: 200px;
-    display: block;
-    margin: auto;
-    padding-bottom: 150px;
-  }
-  input[type=text]{
-    height: 120px;
-    width: 100%;
-    border: 2px solid $DarkGreen;
-    box-sizing: border-box;
-    margin: 20px 0px;
-    font-size: 24pt;
-    font-family: 'Lato', sans-serif;
-    padding-left: 20pt;
-  }
-  a{
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: $DarkGreen;
-    font-size: 24pt;
-    padding: 30px 0px 10px 1px;
-    font-family: Lato;
-  }
-}
-
-.button{
-  width: 100%;
-  background-color: $DarkGreen;
-  color: white;
-  height: 120px;
-  font-family: 'Lato', sans-serif;
-  text-transform: uppercase;
-  font-size: 24pt;
-  font-weight: 700;
-  text-align: center;
-  margin: 20px 0px;
-  border: none;
-}
