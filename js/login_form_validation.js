@@ -19,9 +19,11 @@ function handleFormSubmitLogIn(){
         // Parse JSON string into array
         var JSON_userData = JSON.parse(response);
 
+        var count = 0;
         //kijken of de user bestaat
         for (i = 0; i < JSON_userData.length; i++) {
             if(usrname != JSON_userData[i].usrname){
+                count +=1;
                 continue;
             }
             else {
@@ -33,10 +35,14 @@ function handleFormSubmitLogIn(){
                 }
                 else {
                     console.log("usr exist - password correct");
-                    window.alert("logging in...");
+                    //window.alert("logging in...");
                     window.location = "home.html";
                 }
             }
         };
+        if(count == JSON_userData.length){
+            window.alert("username and/or password are incorrect");
+
+        }
     });
 };

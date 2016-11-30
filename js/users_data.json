@@ -3,12 +3,14 @@
     "usrname":"Pieter",
     "email":"Pieter.vlem@gmail.com",
     "birthdate":"15/11/1994",
-    "password":"toffeFlieter123"
+    "password":"toffeFlieter123",
+    "saved_places": []
   },
   {
     "usrname":"Jasper",
     "email":"jasper.feliers@gmail.com",
     "birthdate":"22/11/1993",
-    "password":"toffeVagijn123"
+    "password":"toffeVagijn123",
+    "saved_places": []
   }
 ]
