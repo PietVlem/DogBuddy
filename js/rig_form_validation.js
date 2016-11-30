@@ -12,6 +12,8 @@
 }
 */
 
+(function(){
+
 console.log("form_validation.js loaded");
 var form = document.querySelector('#reg_from');
 form.onsubmit=function(){
@@ -89,10 +91,8 @@ function handleFormSubmit(){
 
 
     });
-
-
-
 }
+})();
 
 
 

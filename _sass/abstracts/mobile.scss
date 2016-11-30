@@ -129,9 +129,18 @@ main{
   }
   #tegel5{
     background-color: $beige;
+    h1{
+      color: $GreenLight;
+    }
   }
 
   //search mobile
+  span{
+    font-size: 38px;
+    font-family: Lato;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
   .nav_mobile{
     height: 120px;
     background-color: $DarkGreen;
@@ -146,8 +155,6 @@ main{
       float: left;
       height: 100px;
       margin-top: 10px;
-      font-size: 34px;
-      font-family: Lato;
       color: white;
       text-transform: uppercase;
       font-weight: 700;
@@ -156,6 +163,30 @@ main{
     }
 
   }
+  #form_search{
+    img{
+      padding-bottom: 80px;
+    }
+    margin-top: -590px;
+    span{
+      font-family: Lato;
+      padding-left: 15px;
+    }
+    div{
+      margin-bottom: 70px;
+    }
+    input[type="checkbox"]{
+      height: 50px;
+      width: 50px;
+      float: right;
+    }
 
+    #bereik{
+      width: 30%;
+      float: right;
+    }
+    #lblbereik{
 
+    }
+  }
 }

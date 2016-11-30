@@ -3,12 +3,38 @@ layout  : default
 title   : "home Dogbuddy"
 ---
 
-<nav class="nav_mobile">
-    <a href="home.html">
-        <img src="images/logo_white.png" alt="">
-        <span>Home</span>
-    </a>
-</nav>
+
 <main>
-    
+    <div class="nav_mobile">
+        <a href="home.html">
+            <img src="images/logo_white.png" alt="">
+            <span>Home</span>
+        </a>
+    </div>
+
+    <form id="form_search" action="">
+        <img class="logo_small_green" src="images/Search1.png" alt="">
+        <div>
+            <label for="search"><span>Zoeken</span></label>
+            <input type="text" name="search" id="search">
+        </div>
+        <div>
+            <label for="parken"><span>parken</span></label>
+            <input type="checkbox" name="parken" id="parken">
+        </div>
+        <div>
+            <label for="parken"><span>wandelroutes</span></label>
+            <input type="checkbox" name="parken" id="wandelroutes">
+        </div>
+        <div>
+            <label for="parken"><span>Hondenvoorzieningen</span></label>
+            <input type="checkbox" name="parken" id="hVz">
+        </div>
+        <div>
+            <label for="parken"><span>Artsen</span></label>
+            <input type="checkbox" name="artsen" id="artsen">
+        </div>
+        <input class="button" type="submit" value="Zoeken">
+    </form>
+
 </main>

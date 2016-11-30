@@ -2,6 +2,8 @@
  * Created by Pieter on 30/11/16.
  */
 
+(function(){
+
 var inlogForm = document.querySelector("#inlogForm");
 
 inlogForm.onsubmit = function(){
@@ -46,3 +48,5 @@ function handleFormSubmitLogIn(){
         }
     });
 };
+
+})();
