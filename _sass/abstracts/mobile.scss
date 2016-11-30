@@ -106,11 +106,17 @@ main{
       h1{
         height: 100%;
         font-size: 56pt;
+        line-height: 56pt;
         float: left;
         font-weight: 700;
-        text-align: center;
         padding-left: 10%;
-        padding-top: 3%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        //position: absolute;
+        //margin-top: -28pt;
+
       }
     }
 
