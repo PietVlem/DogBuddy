@@ -20,7 +20,7 @@
     marker.setMap(map);
 
     var infoWindowOptions = {
-        content: 'Moscone Is Here!'
+        content: 'Gent-sint-Pieters'
     };
 
     var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
@@ -29,6 +29,8 @@
         infoWindow.open(map, marker);
 
     });
+
+    //map.data.loadGeoJson('https://datatank.stad.gent/4/milieuennatuur/parken.geojson')
 
 })();
 
