@@ -4,33 +4,29 @@
 
 (function(){
 
-var inlogForm = document.querySelector("#inlogForm");
+    var inlogForm = document.querySelector("#inlogForm");
 
-inlogForm.onsubmit = function(){
-    handleFormSubmitLogIn();
-};
+    inlogForm.onsubmit = function(){
+        handleFormSubmitLogIn();
+    };
 
-function handleFormSubmitLogIn(){
-    event.preventDefault();
+    function handleFormSubmitLogIn(){
+        event.preventDefault();
 
-    var usrname = inlogForm[name="login"].value;
-    var password = inlogForm[name="password"].value;
+        var usrname = inlogForm[name="login"].value;
+        var password = inlogForm[name="password"].value;
 
-
-    utils.loadJSON(function(response) {
-        // Parse JSON string into array
-        var JSON_userData = JSON.parse(response);
 
         var count = 0;
         //kijken of de user bestaat
-        for (i = 0; i < JSON_userData.length; i++) {
-            if(usrname != JSON_userData[i].usrname){
+        for (i = 0; i < local_storage_usrs.length; i++) {
+            if(usrname != local_storage_usrs[i].usrname){
                 count +=1;
                 continue;
             }
             else {
                 console.log("else...");
-                if(password != JSON_userData[i].password){
+                if(password != local_storage_usrs[i].password){
                     console.log("user exists - password incorrect");
                     window.alert("username and/or password are in correct");
                     break;
@@ -39,14 +35,14 @@ function handleFormSubmitLogIn(){
                     console.log("usr exist - password correct");
                     //window.alert("logging in...");
                     window.location = "home.html";
+                    localStorage.setItem("Logged_in_usr_id",i);
                 }
             }
         };
-        if(count == JSON_userData.length){
+        if(count == local_storage_usrs.length){
             window.alert("username and/or password are incorrect");
 
         }
-    });
-};
+    };
 
 })();

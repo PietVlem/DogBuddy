@@ -5,12 +5,15 @@
 
 (function(){
 
+
+
     var mapOptions = {
         center: new google.maps.LatLng(51.035556, 3.710556),
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
 
     var markerOptions = {
         position: new google.maps.LatLng(51.035556, 3.710556),
@@ -30,7 +33,7 @@
 
     });
 
-    //map.data.loadGeoJson('https://datatank.stad.gent/4/milieuennatuur/parken.geojson')
+    // map.data.loadGeoJson('https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson')
 
 })();
 

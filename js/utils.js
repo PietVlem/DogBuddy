@@ -13,5 +13,13 @@ var utils = {
             }
         };
         xobj.send(null);
+    },
+    readXML: function(XMLfile){
+        var xml = new XMLHttpRequest();
+        xml.open('get',XMLfile,false);
+        xml.send();
+        var xmlData = xml.responseText;
+        console.log(xmlData);
+        //document.write(xmlData);
     }
 };
