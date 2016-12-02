@@ -1,5 +1,3 @@
-
-
 @media only screen and (max-device-width: 480px) {
 
 //overal
@@ -38,7 +36,7 @@ main{
     padding-bottom: 40px;
   }
 #inlogForm{
-  margin-top: -204px;
+  margin-top: -194px;
 
   .ww_vergeten{
     display: block;
@@ -51,7 +49,7 @@ main{
   }
 }
   input[type=text], input[type=password]{
-    height: 50px;
+    height: 40px;
     width: 100%;
     border: 1px solid $DarkGreen;
     box-sizing: border-box;
@@ -76,14 +74,15 @@ main{
   border: none;
 }
 
-  .a_button{
+  a .button{
     line-height: 30pt;
+    background-color: $GreenLight;
   }
 
 
   //registreren
   #reg_from{
-    margin-top: -271px;
+    margin-top: -182px;
     input[type=text]{
       box-sizing: border-box;
     }
@@ -192,7 +191,6 @@ main{
     height: calc(100% - 50px);
     width: 100%;
   }
-
 
 
 }
