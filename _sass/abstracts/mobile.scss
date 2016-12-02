@@ -144,19 +144,19 @@ main{
     font-weight: 700;
   }
   .nav_mobile{
-    height: 60px;
+    height: 50px;
     background-color: $DarkGreen;
 
     img{
       height: 40px;
-      margin-top: 10px;
+      margin-top: 5px;
       float: left;
     }
 
     span{
       float: left;
       height: 40px;
-      margin-top: 10px;
+      margin-top: 5px;
       color: white;
       text-transform: uppercase;
       font-weight: 400;
@@ -170,7 +170,7 @@ main{
       padding-bottom: 40px;
       width: 60px;
     }
-    margin-top: -210px;
+    margin-top: -215px;
     span{
       font-family: Lato;
       padding-left: 15px;
@@ -188,7 +188,7 @@ main{
 
   //map
   #map{
-    height: calc(100% - 60px);
+    height: calc(100% - 50px);
     width: 100%;
   }
 
