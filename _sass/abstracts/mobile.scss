@@ -35,10 +35,10 @@ main{
     width: 80px;
     display: block;
     margin: auto;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 #inlogForm{
-  margin-top: -217px;
+  margin-top: -204px;
 
   .ww_vergeten{
     display: block;
@@ -55,7 +55,7 @@ main{
     width: 100%;
     border: 1px solid $DarkGreen;
     box-sizing: border-box;
-    margin: 8px 0px;
+    margin: 6px 0px;
     font-size: 10pt;
     font-family: 'Lato', sans-serif;
     padding-left: 10pt;
@@ -72,7 +72,7 @@ main{
   font-size: 12pt;
   font-weight: 700;
   text-align: center;
-  margin: 8px 0px;
+  margin: 6px 0px;
   border: none;
 }
 
@@ -83,7 +83,7 @@ main{
 
   //registreren
   #reg_from{
-    margin-top: -290px;
+    margin-top: -271px;
     input[type=text]{
       box-sizing: border-box;
     }

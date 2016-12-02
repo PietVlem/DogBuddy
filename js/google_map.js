@@ -5,8 +5,6 @@
 
 (function(){
 
-
-
     var mapOptions = {
         center: new google.maps.LatLng(51.035556, 3.710556),
         zoom: 15,
@@ -17,14 +15,7 @@
 
     var markerOptions = {
         position: new google.maps.LatLng(51.035556, 3.710556),
-        map: map,
-        disableDefaultUI: false,
-        zoomControl:false,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false,
+        map: map
     };
     var marker = new google.maps.Marker(markerOptions);
     marker.setMap(map);
@@ -39,8 +30,6 @@
         infoWindow.open(map, marker);
 
     });
-
-    map.data.loadGeoJson('https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson')
 
 })();
 
