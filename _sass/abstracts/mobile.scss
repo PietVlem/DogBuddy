@@ -38,14 +38,15 @@ main{
     padding-bottom: 50px;
   }
 #inlogForm{
-  margin-top: -223px;
+  margin-top: -217px;
+
   .ww_vergeten{
     display: block;
     text-align: center;
     text-decoration: none;
     color: $DarkGreen;
     font-size: 10pt;
-    padding: 15px 0px 0px 0px;
+    padding: 19px 0px 0px 0px;
     font-family: Lato;
   }
 }
@@ -54,7 +55,7 @@ main{
     width: 100%;
     border: 1px solid $DarkGreen;
     box-sizing: border-box;
-    margin: 10px 0px;
+    margin: 8px 0px;
     font-size: 10pt;
     font-family: 'Lato', sans-serif;
     padding-left: 10pt;
@@ -71,18 +72,18 @@ main{
   font-size: 12pt;
   font-weight: 700;
   text-align: center;
-  margin: 10px 0px;
+  margin: 8px 0px;
   border: none;
 }
 
   .a_button{
-    line-height: 28pt;
+    line-height: 30pt;
   }
 
 
   //registreren
   #reg_from{
-    margin-top: -304px;
+    margin-top: -290px;
     input[type=text]{
       box-sizing: border-box;
     }
