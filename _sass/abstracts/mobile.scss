@@ -32,32 +32,32 @@ main{
     margin-left: 10%;
   }
   .logo_small_green{
-    width: 200px;
+    width: 80px;
     display: block;
     margin: auto;
-    padding-bottom: 120px;
+    padding-bottom: 50px;
   }
 #inlogForm{
-  margin-top: -537px;
+  margin-top: -223px;
   .ww_vergeten{
     display: block;
     text-align: center;
     text-decoration: none;
     color: $DarkGreen;
-    font-size: 24pt;
-    padding: 30px 0px 10px 1px;
+    font-size: 10pt;
+    padding: 15px 0px 0px 0px;
     font-family: Lato;
   }
 }
   input[type=text], input[type=password]{
-    height: 120px;
+    height: 50px;
     width: 100%;
-    border: 2px solid $DarkGreen;
+    border: 1px solid $DarkGreen;
     box-sizing: border-box;
-    margin: 20px 0px;
-    font-size: 24pt;
+    margin: 10px 0px;
+    font-size: 10pt;
     font-family: 'Lato', sans-serif;
-    padding-left: 20pt;
+    padding-left: 10pt;
   }
 
 
@@ -65,24 +65,24 @@ main{
   width: 100%;
   background-color: $DarkGreen;
   color: white;
-  height: 120px;
+  height: 40px;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
-  font-size: 24pt;
+  font-size: 12pt;
   font-weight: 700;
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
   border: none;
 }
 
   .a_button{
-    line-height: 90pt;
+    line-height: 28pt;
   }
 
 
   //registreren
   #reg_from{
-    margin-top: -730px;
+    margin-top: -304px;
     input[type=text]{
       box-sizing: border-box;
     }
@@ -96,7 +96,7 @@ main{
       color: white;
       font-family: 'Lato', sans-serif;
       text-transform: uppercase;
-      padding:10%;
+      padding: 10%;
       box-sizing: border-box;
 
       img{
@@ -107,8 +107,8 @@ main{
 
       h1{
         height: 100%;
-        font-size: 56pt;
-        line-height: 56pt;
+        font-size: 24pt;
+        line-height: 24pt;
         float: left;
         font-weight: 700;
         padding-left: 10%;
@@ -138,24 +138,24 @@ main{
 
   //search mobile
   span{
-    font-size: 38px;
+    font-size: 15px;
     font-family: Lato;
     text-transform: uppercase;
     font-weight: 700;
   }
   .nav_mobile{
-    height: 120px;
+    height: 60px;
     background-color: $DarkGreen;
 
     img{
-      height: 100px;
+      height: 40px;
       margin-top: 10px;
       float: left;
     }
 
     span{
       float: left;
-      height: 100px;
+      height: 40px;
       margin-top: 10px;
       color: white;
       text-transform: uppercase;
@@ -167,20 +167,20 @@ main{
   }
   #form_search{
     img{
-      padding-bottom: 80px;
-      width: 2px;
+      padding-bottom: 40px;
+      width: 60px;
     }
-    margin-top: -540px;
+    margin-top: -210px;
     span{
       font-family: Lato;
       padding-left: 15px;
     }
     div{
-      margin-bottom: 70px;
+      margin-bottom: 35px;
     }
     input[type="checkbox"]{
-      height: 50px;
-      width: 50px;
+      height: 25px;
+      width: 25px;
       float: right;
     }
 
@@ -188,7 +188,7 @@ main{
 
   //map
   #map{
-    height: calc(100% - 120px);
+    height: calc(100% - 60px);
     width: 100%;
   }
 
