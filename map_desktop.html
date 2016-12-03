@@ -1,0 +1,47 @@
+---
+layout  : default
+title   : "map Dogbuddy"
+---
+
+<header>
+    <nav>
+        <img src="images/logo_white.png" alt="">
+        <ul>
+            <li><a href="">zoeken</a></li>
+            <li><a href="">Favorieten</a></li>
+        </ul>
+        <img src="images/Settings_gear.png" alt="">
+    </nav>
+</header>
+<main class="main_with_nav">
+    <div id="search_div">
+        <form id="form_search_desktop" action="">
+            <div>
+                <input type="text" name="search" id="search" required placeholder="Zoeken...">
+            </div>
+            <div>
+                <label for="parken"><span>parken</span></label>
+                <input type="checkbox" name="parken" id="parken">
+            </div>
+            <div>
+                <label for="parken"><span>wandelroutes</span></label>
+                <input type="checkbox" name="parken" id="wandelroutes">
+            </div>
+            <div>
+                <label for="parken"><span>Hondenvoorzieningen</span></label>
+                <input type="checkbox" name="parken" id="hVz">
+            </div>
+            <div>
+                <label for="parken"><span>Artsen</span></label>
+                <input type="checkbox" name="artsen" id="artsen">
+            </div>
+            <input class="button" type="submit" value="Zoeken">
+        </form>
+    </div>
+    <div id="map"></div>
+    <div id="results"></div>
+</main>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBor4Ubia9VE6npjvflRJCpNdOfdMuMINI"></script>
+
+<script src="js/google_map.js"></script>

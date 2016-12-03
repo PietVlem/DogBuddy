@@ -34,8 +34,17 @@
                 else {
                     console.log("usr exist - password correct");
                     //window.alert("logging in...");
-                    window.location = "home.html";
                     localStorage.setItem("Logged_in_usr_id",i);
+
+                     if(window.innerWidth > 480){
+                         window.location = "map_desktop.html";
+                     }
+                    else {
+                         window.location = "home.html";
+                     }
+
+
+
                 }
             }
         };

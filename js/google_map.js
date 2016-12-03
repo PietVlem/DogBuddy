@@ -13,7 +13,7 @@
 
     var mapOptions = {
         center: new google.maps.LatLng(51.035556, 3.710556),
-        zoom: 15,
+        zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);

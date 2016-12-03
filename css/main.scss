@@ -11,7 +11,9 @@
 // 6. Page-specific styles
 // 7. Themes
 
-
+@import "abstracts/desktop.scss";
+@import "abstracts/tablet.scss";
 @import "abstracts/mobile";
+
 
 
