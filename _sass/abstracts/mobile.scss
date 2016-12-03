@@ -28,6 +28,7 @@ main{
     position: absolute;
     top: 50%;
     margin-left: 10%;
+    left: 0;
   }
   .logo_small_green{
     width: 80px;
@@ -166,11 +167,11 @@ main{
 
   }
   #form_search{
+    margin-top: -153px;
     img{
       padding-bottom: 40px;
       width: 60px;
     }
-    margin-top: -215px;
     span{
       font-family: Lato;
       padding-left: 15px;
