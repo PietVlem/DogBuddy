@@ -9,12 +9,21 @@ p{
   font-family: Lato;
   font-size: 14pt;
 }
-
-//index
 main{
-  height: 100vh;
+  height: calc(100vh - 48px);
   width: 100%;
   background-color: $beige;
+}
+
+//hide mobile things
+.nav_mobile{
+  display: none;
+}
+
+//index
+.index{
+  height: 100vh;
+  width: 100%;
 }
 form{
   box-sizing: border-box;
@@ -37,7 +46,7 @@ form{
     display: block;
     text-align: center;
     text-decoration: none;
-    color: $DarkGreen;
+    color: $green_dark;
     font-size: 10pt;
     padding: 19px 0px 0px 0px;
     font-family: Lato;
@@ -46,7 +55,7 @@ form{
 input[type=text], input[type=password]{
   height: 35px;
   width: 100%;
-  border: 1px solid $DarkGreen;
+  border: 1px solid $green_dark;
   box-sizing: border-box;
   margin: 6px 0px;
   font-size: 10pt;
@@ -55,7 +64,7 @@ input[type=text], input[type=password]{
 }
 .button{
   width: 100%;
-  background-color: $DarkGreen;
+  background-color: $green_dark;
   color: white;
   height: 35px;
   font-family: 'Lato', sans-serif;
@@ -69,7 +78,7 @@ input[type=text], input[type=password]{
 
 a .button{
   line-height: 25pt;
-  background-color: $GreenLight;
+  background-color: $green_light;
 }
 
 //registreren
@@ -82,7 +91,7 @@ a .button{
   }
   a .button{
     line-height: 30pt;
-    background-color: $GreenLight;
+    background-color: $green_light;
     height: 40px;
   }
 }
@@ -90,7 +99,7 @@ a .button{
 //map
 nav{
   height: 48px;
-  background-color: $DarkGreen;
+  background-color: $green_dark;
   img:first-child{
     float: left;
     height: 40px;
@@ -117,7 +126,7 @@ nav{
   img:last-child{
     float: right;
     height: 30px;
-    padding-top: 9px;
+    margin-top: 9px;
     margin-right: 20px;
   }
 }
@@ -159,4 +168,28 @@ nav{
   width: 300px;
   float: right;
   height: 100%;
+}
+
+//profile
+#profile{
+  width: 260px;
+  display: block;
+  margin: auto;
+}
+
+.profile_icon{
+  width: 80px;
+  display: block;
+  margin: auto;
+  padding-top: 40px;
+}
+#profile_info>p{
+  text-align: justify;
+  font-size: 12pt;
+  text-transform: uppercase;
+  line-height: 20pt;
+}
+
+#WW_change{
+  margin-top: -118px;
 }

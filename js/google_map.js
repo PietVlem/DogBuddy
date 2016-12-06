@@ -5,41 +5,60 @@
 
 (function(){
 
-    /*
-    var Link_hondenvoorzieningen = 'https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson';
-    */
+    if(window.location.pathname == '/map.html' || window.location.pathname == '/map_desktop.html'){
+
+    }
+
+
+    var map;
+
+    function initialize() {
+        var map = new google.maps.Map(
+            document.getElementById("map"), {
+                center: new google.maps.LatLng(51.054342, 3.717424),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        map.data.addGeoJson(jsonData);
+        map.data.setStyle({strokeColor: "#555555"})
 
 
 
-    var mapOptions = {
-        center: new google.maps.LatLng(51.035556, 3.710556),
-        zoom: 14,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+
+        for(i = 0; i < local_storage_Hv.coordinates.length; i++){
+            var markerOptions = {
+                position: new google.maps.LatLng(local_storage_Hv.coordinates[i][1],local_storage_Hv.coordinates[i][0]),
+                map: map
+            };
+            var marker = new google.maps.Marker(markerOptions);
+            marker.setMap(map);
+        }
+    }
+    google.maps.event.addDomListener(window, "load", initialize);
 
 
 
-    var markerOptions = {
-        position: new google.maps.LatLng(51.035556, 3.710556),
-        map: map
-    };
-    var marker = new google.maps.Marker(markerOptions);
-    marker.setMap(map);
 
-    var infoWindowOptions = {
-        content: 'Gent-sint-Pieters'
-    };
 
-    var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
-    google.maps.event.addListener(marker,'click',function(e){
-
-        infoWindow.open(map, marker);
-
-    });
 
 
 })();
 
+/*
+
+ var infoWindowOptions = {
+ content: 'Gent-sint-Pieters'
+ };
+
+ var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+ google.maps.event.addListener(marker,'click',function(e){
+
+ infoWindow.open(map, marker);
+
+ });
+
+
+ */
 
 

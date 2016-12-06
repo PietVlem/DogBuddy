@@ -4,54 +4,58 @@
 
 (function(){
 
-    var inlogForm = document.querySelector("#inlogForm");
+    if(window.location.pathname == '/index.html' || window.location.pathname == '/'){
+        var inlogForm = document.querySelector("#inlogForm");
 
-    inlogForm.onsubmit = function(){
-        handleFormSubmitLogIn();
-    };
+        inlogForm.onsubmit = function(){
+            handleFormSubmitLogIn();
+        };
 
-    function handleFormSubmitLogIn(){
-        event.preventDefault();
+        function handleFormSubmitLogIn(){
+            event.preventDefault();
 
-        var usrname = inlogForm[name="login"].value;
-        var password = inlogForm[name="password"].value;
+            var usrname = inlogForm[name="login"].value;
+            var password = inlogForm[name="password"].value;
 
 
-        var count = 0;
-        //kijken of de user bestaat
-        for (i = 0; i < local_storage_usrs.length; i++) {
-            if(usrname != local_storage_usrs[i].usrname){
-                count +=1;
-                continue;
-            }
-            else {
-                console.log("else...");
-                if(password != local_storage_usrs[i].password){
-                    console.log("user exists - password incorrect");
-                    window.alert("username and/or password are in correct");
-                    break;
+            var count = 0;
+            //kijken of de user bestaat
+            for (i = 0; i < local_storage_usrs.length; i++) {
+                if(usrname != local_storage_usrs[i].usrname){
+                    count +=1;
+                    continue;
                 }
                 else {
-                    console.log("usr exist - password correct");
-                    //window.alert("logging in...");
-                    localStorage.setItem("Logged_in_usr_id",i);
-
-                     if(window.innerWidth > 480){
-                         window.location = "map_desktop.html";
-                     }
+                    console.log("else...");
+                    if(password != local_storage_usrs[i].password){
+                        console.log("user exists - password incorrect");
+                        window.alert("username and/or password are in correct");
+                        break;
+                    }
                     else {
-                         window.location = "home.html";
-                     }
+                        console.log("usr exist - password correct");
+                        //window.alert("logging in...");
+                        localStorage.setItem("Logged_in_usr_id",i);
+
+                        if(window.innerWidth > 480){
+                            window.location = "map_desktop.html";
+                        }
+                        else {
+                            window.location = "home.html";
+                        }
 
 
 
+                    }
                 }
+            };
+            if(count == local_storage_usrs.length){
+                window.alert("username and/or password are incorrect");
+
             }
         };
-        if(count == local_storage_usrs.length){
-            window.alert("username and/or password are incorrect");
+    }
 
-        }
-    };
+
 
 })();
