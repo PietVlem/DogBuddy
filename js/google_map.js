@@ -16,11 +16,11 @@
         var map = new google.maps.Map(
             document.getElementById("map"), {
                 center: new google.maps.LatLng(51.054342, 3.717424),
-                zoom: 14,
+                zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
         map.data.addGeoJson(jsonData);
-        map.data.setStyle({strokeColor: "#555555"})
+        map.data.setStyle({strokeColor: "#6caa9a"})
 
 
 
