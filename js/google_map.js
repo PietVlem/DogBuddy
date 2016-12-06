@@ -29,7 +29,8 @@
         for(i = 0; i < local_storage_Hv.coordinates.length; i++){
             var markerOptions = {
                 position: new google.maps.LatLng(local_storage_Hv.coordinates[i][1],local_storage_Hv.coordinates[i][0]),
-                map: map
+                map: map,
+                icon: 'images/map_pin_HV.png'
             };
             var marker = new google.maps.Marker(markerOptions);
             marker.setMap(map);
