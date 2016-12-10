@@ -7,6 +7,7 @@
             localStorage.setItem("user_data",JSON.stringify(data));
         });
     }
+
     window.onresize = function(){
         if(window.location.pathname == '/map_desktop.html' && window.innerWidth < 480){
             window.location = '{{site.baseutl}}/MAP_Desktop/';
@@ -18,4 +19,5 @@
 
 })();
 
-var local_storage_usrs = localStorage.user_data;
+var local_storage_usrs = JSON.parse(localStorage.user_data);
+console.log(local_storage_usrs);

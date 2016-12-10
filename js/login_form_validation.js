@@ -17,6 +17,8 @@
             var usrname = inlogForm[name="login"].value;
             var password = inlogForm[name="password"].value;
 
+            console.log(local_storage_usrs);
+
 
             var count = 0;
             //kijken of de user bestaat
@@ -41,7 +43,7 @@
                             window.location = "MAP_Desktop/";
                         }
                         else {
-                            window.location = "../pages/home.html";
+                            window.location = "home/";
                         }
 
 
