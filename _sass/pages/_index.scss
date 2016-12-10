@@ -1,0 +1,33 @@
+.index{
+  height: 100vh;
+  width: 100%;
+}
+#inlogForm{
+  margin-top: -184px;
+
+  .ww_vergeten{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $green_dark;
+    font-size: 10pt;
+    padding: 19px 0px 0px 0px;
+    font-family: Lato;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  #inlogForm{
+    margin-top: -194px;
+
+    .ww_vergeten{
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: $green_dark;
+      font-size: 10pt;
+      padding: 19px 0px 0px 0px;
+      font-family: Lato;
+    }
+  }
+}

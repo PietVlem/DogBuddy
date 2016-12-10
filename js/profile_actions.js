@@ -34,7 +34,7 @@
                         localStorage.setItem("user_data",JSON.stringify(local_storage_usrs));
                         console.log(local_storage_usrs);
                         window.alert("password changed!");
-                        window.location = "profile.html";
+                        window.location = "../pages/profile.html";
                     }
                     else {
                         window.alert("Your new password must be atleast 5 characters long!");

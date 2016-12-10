@@ -1,38 +1,44 @@
 /**
  * Created by Pieter on 29/11/16.
  */
+
 var utils = {
-    loadJSON_users : function(callback){
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'js/users_data.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
+    readJsonFile : function(file, callback){
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
             }
         };
-        xobj.send(null);
+        rawFile.send(null);
     },
-    loadJSON_HV : function(callback){
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojson', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
+    getGEOLocationByPromise: function(){
+        return new Promise(function(resolve, reject) {
+            if(Modernizr.geolocation){
+                navigator.geolocation.getCurrentPosition(
+                    function(position){
+                        resolve(position);
+                    },
+                    function(error){
+                        switch(error.code)
+                        {
+                            case error.PERMISSION_DENIED: console.log("User did not share geolocation data");break;
+                            case error.POSITION_UNAVAILABLE: console.log("Could not detect current position");break;
+                            case error.TIMEOUT: console.log("Retrieving position timed out");break;
+                            default: console.log("Unknown Error");break;
+                        }
+                        reject(error);
+                    },
+                    {timeout:10000,enableHighAccuracy:true}
+                )
             }
-        };
-        xobj.send(null);
-    },
-    readXML: function(XMLfile){
-        var xml = new XMLHttpRequest();
-        xml.open('get',XMLfile,false);
-        xml.send();
-        var xmlData = xml.responseText;
-        console.log(xmlData);
-        //document.write(xmlData);
+            else{
+                reject("HTML5 Geolocation not supported!");
+            }
+        });
     }
 };
+
 

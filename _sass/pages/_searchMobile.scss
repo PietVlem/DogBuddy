@@ -1,0 +1,48 @@
+span{
+  font-size: 15px;
+  font-family: Lato;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nav_mobile{
+  height: 50px;
+  background-color: $green_dark;
+
+  img{
+    height: 40px;
+    margin-top: 5px;
+    float: left;
+  }
+
+  span{
+    float: left;
+    height: 40px;
+    margin-top: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    display:flex;
+    align-items: center;
+  }
+
+}
+#form_search{
+  margin-top: -153px;
+  img{
+    padding-bottom: 40px;
+    width: 60px;
+  }
+  span{
+    font-family: Lato;
+    padding-left: 15px;
+  }
+  div{
+    margin-bottom: 35px;
+  }
+  input[type="checkbox"]{
+    height: 25px;
+    width: 25px;
+    float: right;
+  }
+
+}

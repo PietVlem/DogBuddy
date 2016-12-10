@@ -1,0 +1,22 @@
+//registreren
+#reg_from{
+  margin-top: -182px;
+
+  input[type=text], input[type=password], input[type=submit]{
+    box-sizing: border-box;
+    height: 40px;
+  }
+  a .button{
+    line-height: 30pt;
+    background-color: $green_light;
+    height: 40px;
+  }
+}
+@media only screen and (max-device-width: 480px){
+  #reg_from{
+    margin-top: -182px;
+    input[type=text]{
+      box-sizing: border-box;
+    }
+  }
+}

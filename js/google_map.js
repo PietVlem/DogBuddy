@@ -3,63 +3,92 @@
  *
  */
 
-(function(){
+(function () {
+    if (window.location.pathname == '/MAP_Desktop/' || window.location.pathname == '/map/') {
 
-    if(window.location.pathname == '/map.html' || window.location.pathname == '/map_desktop.html'){
+        var key = 'AIzaSyBor4Ubia9VE6npjvflRJCpNdOfdMuMINI';
 
-    }
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp'
+            + '&key=' + key
+            + '&callback=initGoogleMaps';
+        document.body.insertBefore(script, document.querySelector('#google_script'));
 
+        this.initGoogleMaps = function () {
+            GMap.initMap();
 
-    var map;
-
-    function initialize() {
-        var map = new google.maps.Map(
-            document.getElementById("map"), {
-                center: new google.maps.LatLng(51.054342, 3.717424),
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-        map.data.addGeoJson(jsonData);
-        map.data.setStyle({strokeColor: "#6caa9a"})
-
-
-
+            GMap.addMarkerHV();
+            GMap.addMarkerDoctors();
+            GMap.addLinesWalkingRoutes();
+            GMap.addParcAreas();
 
 
-        for(i = 0; i < local_storage_Hv.coordinates.length; i++){
-            var markerOptions = {
-                position: new google.maps.LatLng(local_storage_Hv.coordinates[i][1],local_storage_Hv.coordinates[i][0]),
-                map: map,
-                icon: 'images/map_pin_HV.png'
-            };
-            var marker = new google.maps.Marker(markerOptions);
-            marker.setMap(map);
+
+
+            /*
+            utils.getGEOLocationByPromise();
+            console.log(navigator.geolocation);
+            */
+
         }
+
+
+
+
+
     }
-    google.maps.event.addDomListener(window, "load", initialize);
-
-
-
-
-
 
 
 })();
 
-/*
+var GMap = {
+    initMap: function () {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 51.054342, lng: 3.717424},
+            zoom: 14
+        });
+    },
+    addMarkerHV: function (JSONdata, markerImg) {
+        utils.readJsonFile('/data/hondenvoorzieningen.json' , function (text) {
+            var data = JSON.parse(text);
+            for (var i = 0; i < data.coordinates.length; i++) {
+                var marker = new google.maps.Marker(
+                    {
+                        position: {lat: data.coordinates[i][1], lng: data.coordinates[i][0]},
+                        icon: '/images/map_pin_HV.png'
+                    }
+                );
+                marker.setMap(map);
+            }
+        });
+    },
+    addMarkerDoctors: function () {
+        utils.readJsonFile('/data/dieren_artsen.json' , function (text) {
+            var data = JSON.parse(text);
+            for (var i = 0; i < data.length; i++) {
+                var marker = new google.maps.Marker(
+                    {
+                        position: {lat: data[i].coordinates[0], lng: data[i].coordinates[1]},
+                        icon: '/images/arts.png'
+                    }
+                );
+                marker.setMap(map);
+            }
+        });
+    },
+    addLinesWalkingRoutes: function(){
+        utils.readJsonFile('/data/wandelroutes.json' , function (text) {
+            var data = JSON.parse(text);
+            map.data.addGeoJson(data);
+        });
 
- var infoWindowOptions = {
- content: 'Gent-sint-Pieters'
- };
-
- var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
- google.maps.event.addListener(marker,'click',function(e){
-
- infoWindow.open(map, marker);
-
- });
-
-
- */
-
+    },
+    addParcAreas: function(){
+        utils.readJsonFile('/data/parken.json' , function (text) {
+            var data = JSON.parse(text);
+            map.data.addGeoJson(data);
+        });
+    }
+};
 

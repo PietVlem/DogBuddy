@@ -1,0 +1,38 @@
+#profile{
+  width: 260px;
+  display: block;
+  margin: auto;
+}
+
+.profile_icon{
+  width: 80px;
+  display: block;
+  margin: auto;
+  padding-top: 40px;
+}
+#profile_info>p{
+  text-align: justify;
+  font-size: 12pt;
+  text-transform: uppercase;
+  line-height: 20pt;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .profile_icon{
+    width: 60px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+  }
+  #profile_content{
+    //width: 80%;
+    margin: auto;
+    #profile_content p{
+      text-transform: uppercase;
+    }
+    a{
+
+    }
+
+  }
+}

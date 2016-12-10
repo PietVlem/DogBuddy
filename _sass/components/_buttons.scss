@@ -1,0 +1,39 @@
+.button{
+  width: 100%;
+  background-color: $green_dark;
+  color: white;
+  height: 35px;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-size: 12pt;
+  font-weight: 700;
+  text-align: center;
+  margin: 6px 0px;
+  border: none;
+}
+
+a .button{
+  line-height: 25pt;
+  background-color: $green_light;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .button{
+    width: 100%;
+    background-color: $green_dark;
+    color: white;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: center;
+    margin: 6px 0px;
+    border: none;
+  }
+  a .button{
+    line-height: 30pt;
+    background-color: $green_light;
+  }
+}
+

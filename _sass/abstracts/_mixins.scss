@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+a{
+  text-decoration: none;
+}
+main{
+  height: calc(100vh - 48px);
+  width: 100%;
+  background-color: $beige;
+}
+
+//hide mobile things
+.nav_mobile{
+  display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+  main{
+    height: 100vh;
+    width: 100%;
+    background-color: $beige;
+  }
+}
+
