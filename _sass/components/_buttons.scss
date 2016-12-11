@@ -16,6 +16,10 @@ a .button{
   line-height: 25pt;
   background-color: $green_light;
 }
+#test_btn{
+  width: 260px;
+  margin-left: calc(50% - 130px);
+}
 
 @media only screen and (max-device-width: 480px) {
   .button{
