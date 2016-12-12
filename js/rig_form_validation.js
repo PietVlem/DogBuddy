@@ -93,7 +93,7 @@
 
                         //keer trg naar inlogscherm
                         window.alert("New user created, you can log in now!");
-                        window.location = "index.html";
+                        window.location = "../";
 
                     }
                     else {

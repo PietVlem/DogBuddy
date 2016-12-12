@@ -1,0 +1,20 @@
+[
+  {
+    "name":"Hondenkapsalon Tineke",
+    "coordinates":[51.070147,3.682055],
+    "address": "Brugsesteenweg 417",
+    "phone": "0497 81 66 79"
+  },
+  {
+    "name":"Boemer",
+    "coordinates":[51.060562,3.710581],
+    "address": "Wondelgemstraat 1",
+    "phone": "0479 71 92 35"
+  },
+  {
+    "name":"Haesaert / Christel",
+    "coordinates":[51.082889,3.692818],
+    "address": "Groenestaakstraat 69",
+    "phone": "0478 75 19 81"
+  }
+]

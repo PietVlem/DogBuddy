@@ -40,7 +40,7 @@
                         localStorage.setItem("Logged_in_usr_id",i);
 
                         if(window.innerWidth > 480){
-                            window.location = "MAP_Desktop/";
+                            window.location = "map_desktop/";
                         }
                         else {
                             window.location = "home/";

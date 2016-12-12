@@ -1,7 +1,7 @@
 ---
 layout      :   default
 title       :   "MAP Dogbuddy"
-permalink   :   "/MAP_Desktop/"
+permalink   :   "/map_desktop/"
 ---
 
 <header>
@@ -11,22 +11,14 @@ permalink   :   "/MAP_Desktop/"
             <li><a href="">zoeken</a></li>
             <li><a href="">Favorieten</a></li>
         </ul>
-        <a href="profile.html"><img src="../images/Settings_gear.png" alt=""></a>
+        <a href="{{site.baseutl}}/profiel/"><img src="../images/Settings_gear.png" alt=""></a>
     </nav>
 </header>
 <main class="main_with_nav">
     <div id="search_div">
-        <form id="form_search_desktop" action="">
+        <form id="form_search_desktop">
             <div>
                 <input type="text" name="search" id="search" placeholder="Zoeken...">
-            </div>
-            <div>
-                <label for="parken"><span>parken</span></label>
-                <input type="checkbox" name="parken" id="parken">
-            </div>
-            <div>
-                <label for="wandelroutes"><span>wandelroutes</span></label>
-                <input type="checkbox" name="wandelroutes" id="wandelroutes">
             </div>
             <div>
                 <label for="hVz"><span>Hondenvoorzieningen</span></label>
@@ -36,12 +28,26 @@ permalink   :   "/MAP_Desktop/"
                 <label for="artsen"><span>Artsen</span></label>
                 <input type="checkbox" name="artsen" id="artsen">
             </div>
+            <div>
+                <label for="dierenwinkels"><span>dierenwinkels</span></label>
+                <input type="checkbox" name="dierenwinkels" id="dierenwinkels">
+            </div>
+            <div>
+                <label for="hondenkappers"><span>hondenkappers</span></label>
+                <input type="checkbox" name="hondenkappers" id="hondenkappers">
+            </div>
+            <div>
+                <label for="wandelroutes"><span>wandelroutes</span></label>
+                <input type="checkbox" name="wandelroutes" id="wandelroutes">
+            </div>
+            <div>
+                <label for="parken"><span>parken</span></label>
+                <input type="checkbox" name="parken" id="parken">
+            </div>
         </form>
         <button id="test_btn" class="button">Tonen</button>
-
     </div>
     <div id="map"></div>
-    <div id="results"></div>
 </main>
 
 <!--
