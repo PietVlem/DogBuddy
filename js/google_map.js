@@ -46,7 +46,7 @@
         script.type = 'text/javascript';
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp'
             + '&key=' + key
-            + '&callback=initGoogleMaps';
+            + '&libraries=places&callback=initGoogleMaps';
         document.body.insertBefore(script, document.querySelector('#google_script'));
 
 
@@ -54,6 +54,64 @@
             GMap.initMap();
             WRlayer = new google.maps.Data();
             PAlayer = new google.maps.Data();
+
+            var input = document.getElementById('search');
+            var searchBox = new google.maps.places.SearchBox(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function() {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function(marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(50, 50)
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+
         };
 
         var test_btn = document.querySelector("#test_btn");
@@ -130,7 +188,8 @@ var GMap = {
             var info =
                     "<b>" + DataDA[i].name + "</b><br>" +
                     DataDA[i].address +"<br>"+
-                    DataDA[i].phone;
+                    DataDA[i].phone +
+                    "<div class='button_map'>Favoriet</div>";
             GMap.bindInfoWindow(marker, map, this.infowindow, info);
             this.DAarray.push(marker);
         }
@@ -154,7 +213,8 @@ var GMap = {
             var info =
                 "<b>" + DataDW[i].name + "</b><br>" +
                 DataDW[i].address +"<br>"+
-                DataDW[i].phone;
+                DataDW[i].phone +
+                "<div class='button_map'>Favoriet</div>";
             GMap.bindInfoWindow(marker, map, this.infowindow, info);
             this.DWarray.push(marker);
         }
@@ -178,7 +238,8 @@ var GMap = {
             var info =
                 "<b>" + DataHK[i].name + "</b><br>" +
                 DataHK[i].address +"<br>"+
-                DataHK[i].phone;
+                DataHK[i].phone +
+                "<div class='button_map'>Favoriet</div>";
             GMap.bindInfoWindow(marker, map, this.infowindow, info);
             this.HKarray.push(marker);
         }
@@ -224,4 +285,3 @@ var GMap = {
         });
     }
 };
-
