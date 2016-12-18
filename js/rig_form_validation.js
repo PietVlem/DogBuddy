@@ -13,8 +13,8 @@
 */
 
 (function(){
-    if(window.location.pathname == '/rigister.html'){
-        //console.log("form_validation.js loaded");
+    if(window.location.pathname == '/register/'){
+        console.log("form_validation.js loaded");
         var form_reg = document.querySelector('#reg_from');
         form_reg.onsubmit=function(){
             handleFormSubmit();
