@@ -1,38 +1,44 @@
 ---
 layout      :   default
-title       :   "home Dogbuddy"
+title       :   "Home Dogbuddy"
 permalink   :   "/home/"
 ---
 
 <main id="#home_tegels">
-    <a href="{{site.baseutl}}/Zoeken_mobiel/">
+    <a href="{{site.baseurl}}/Zoeken_mobiel/">
         <div class="home_tegel" id="tegel1">
             <img src="../images/Search.png" alt="">
             <h1>zoeken</h1>
         </div>
     </a>
-    <a href="{{site.baseutl}}/map/">
+    <a href="{{site.baseurl}}/map/">
         <div class="home_tegel" id="tegel2">
             <img src="../images/Paper%20plane.png" alt="">
             <h1>Map</h1>
         </div>
     </a>
-    <a href="{{site.baseutl}}">
+    <a href="{{site.baseurl}}">
         <div class="home_tegel" id="tegel3">
             <img src="../images/Folder.png" alt="">
             <h1>Favorieten</h1>
         </div>
     </a>
-    <a href="{{site.baseutl}}">
+    <a href="{{site.baseurl}}/weer/">
         <div class="home_tegel" id="tegel4">
             <img src="../images/Cloud.png" alt="">
             <h1>weer</h1>
         </div>
     </a>
-    <a href="{{site.baseutl}}/profiel/">
+    <a href="{{site.baseurl}}/profiel/">
         <div class="home_tegel" id="tegel5">
             <img src="../images/settings.png" alt="">
             <h1>account</h1>
         </div>
     </a>
 </main>
+
+<script>
+    if(localStorage.getItem("Logged_in_usr_id") === null){
+        window.location = "../";
+    }
+</script>

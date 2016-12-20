@@ -30,9 +30,17 @@ permalink   :   "/profiel/"
                 <div class="button">Verander wachtwoord</div>
             </a>
             <a class="a_button" href="">
-                <div class="button">feedback</div>
+                <div id="feedback_btn" class="button">feedback</div>
             </a>
-            <br>
+            <a class="a_button" href="">
+                <div id="logout_btn" class="button">logout</div>
+            </a>
         </div>
     </div>
 </main>
+
+<script>
+    if(localStorage.getItem("Logged_in_usr_id") === null){
+        window.location = "../";
+    }
+</script>

@@ -1,0 +1,29 @@
+---
+layout      :   default
+title       :   "Favorieten Dogbuddy"
+permalink   :   "/favorieten/"
+---
+
+<header>
+    <nav>
+        <img src="../images/logo_white.png" alt="">
+        <ul>
+            <li><a href="{{site.baseurl}}/map_desktop/">zoeken</a></li>
+            <li><a href="{{site.baseurl}}/favorieten/">Favorieten</a></li>
+        </ul>
+        <a href="{{site.baseutl}}/profiel/"><img src="../images/Settings_gear.png" alt=""></a>
+    </nav>
+</header>
+<main>
+    <h1 id="favo">Favorieten</h1>
+    <table id="favoriten_tabel">
+
+    </table>
+</main>
+
+<script>
+    if(localStorage.getItem("Logged_in_usr_id") === null){
+        window.location = "../";
+    }
+</script>
+<script src="../js/favorites.js"></script>

@@ -1,113 +1,151 @@
 [
   {
+    "id":1,
+    "type": "arts",
     "name":"De Groote Brigitte",
     "coordinates":[51.024832,3.721553],
     "address": "Steenakker 17",
     "phone": "09 220 03 54"
   },
   {
+    "id":2,
+    "type": "arts",
     "name":"Van den Daele Jan",
     "coordinates":[51.046792,3.732649],
     "address": "Graaf Van Vlaanderenplein 30",
     "phone": "09.233 04 04"
   },
   {
+    "id":3,
+    "type": "arts",
     "name":"SocVet 24u., 7d. (Dierenarts - Veterinary)",
     "coordinates":[51.023633,3.720739],
     "address": "Zwijnaardsesteenweg 555",
     "phone": "0488 16 63 73"
   },
   {
+    "id":4,
+    "type": "arts",
     "name":"Heughebaert Anne",
     "coordinates":[51.049788,3.719514],
     "address":"Recollettenlei 18",
     "phone": "09 233 32 93"
   },
   {
+    "id":5,
+    "type": "arts",
     "name":"Dr. Chantal Finjaer",
     "coordinates":[51.030763,3.713087],
     "address":"Kortrijksesteenweg 707",
     "phone": "09 222 33 22"
   },
   {
+    "id":6,
+    "type": "arts",
     "name":"Vereecke Katrien",
     "coordinates":[51.039880,3.705652],
     "address": "Rijsenbergstraat 36",
     "phone": "09 328 16 69"
   },
   {
+    "id":7,
+    "type": "arts",
     "name":"Dierenarts Jasia Van Praet",
     "coordinates":[51.046767,3.745335],
     "address": "Vlaamsekaai 132",
     "phone": "09 334 61 24"
   },
   {
+    "id":8,
+    "type": "arts",
     "name":"Dierenartsenpraktijk Isabelle en Sigrid",
     "coordinates":[51.030857,3.763026],
     "address": "Brusselsesteenweg 661",
     "phone": "09/2315359"
   },
   {
+    "id":9,
+    "type": "arts",
     "name":"Herbots P.",
     "coordinates":[51.040955,3.742549],
     "address": "Brusselsesteenweg 35",
     "phone": "09 231 03 83"
   },
   {
+    "id":10,
+    "type": "arts",
     "name":"Verschooten - Spatz / Francis - Annie",
     "coordinates":[51.029951, 3.722924],
     "address": "Uilkensstraat 117",
     "phone": "09 222 31 28"
   },
   {
+    "id":11,
+    "type": "arts",
     "name":"Dierenartsenpraktijk 't Snorhaar, Mieke Vandenborre",
     "coordinates":[51.056003,3.694712],
     "address": "Drongensesteenweg 177",
     "phone": "09 227 94 73"
   },
   {
+    "id":12,
+    "type": "arts",
     "name":"Dierenartsenpraktijk De Harlekijn",
     "coordinates":[51.047466,3.694712],
     "address": "Varendriesstraat 5",
     "phone": "09 226 42 05"
   },
   {
+    "id":13,
+    "type": "arts",
     "name":"Dierenartsenpraktijk Botermarkt",
     "coordinates":[51.033245,3.741555],
     "address": "Hundelgemsesteenweg 6",
     "phone": "09 231 20 78"
   },
   {
+    "id":14,
+    "type": "arts",
     "name":"Vandenbussche Jan Pieter",
     "coordinates":[51.068034,3.686207],
     "address": "Brugsesteenweg 33",
     "phone": "09 227 66 94"
   },
   {
+    "id":15,
+    "type": "arts",
     "name":"Dierenartsenpraktijk Ryhove",
     "coordinates":[51.092272,3.716042],
     "address": "Evergemsesteenweg 43",
     "phone": "09 236 15 80"
   },
   {
+    "id":16,
+    "type": "arts",
     "name":"Dierenarts Stijn Hauspie",
     "coordinates":[51.052600,3.736392],
     "address": "Slachthuisstraat 35",
     "phone": "0471 73 19 01"
   },
   {
+    "id":17,
+    "type": "arts",
     "name":"Dierenpraktijk De Brug bvba",
     "coordinates":[51.075247,3.679134],
     "address": "Brugsesteenweg 605",
     "phone": "09 226 68 46"
   },
   {
+    "id":18,
+    "type": "arts",
     "name":"Grootveld Hendrik",
     "coordinates":[51.076000,3.709969],
     "address": "Grensstraat 193",
     "phone": "09 227 90 13"
   },
   {
+    "id":19,
+    "type": "arts",
     "name":"Maenhout T.",
     "coordinates":[51.069046,3.748805],
     "address": "Hogeweg 203",

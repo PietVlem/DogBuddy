@@ -36,3 +36,9 @@ permalink   :   "/Zoeken_mobiel/"
     </form>
 
 </main>
+
+<script>
+    if(localStorage.getItem("Logged_in_usr_id") === null){
+        window.location = "../";
+    }
+</script>

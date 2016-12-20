@@ -1,9 +1,3 @@
-/**
- * Created by Pieter on 01/12/16.
- *
- */
-
-
 (function () {
 
     /*
@@ -59,14 +53,14 @@
             var searchBox = new google.maps.places.SearchBox(input);
 
             // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function() {
+            map.addListener('bounds_changed', function () {
                 searchBox.setBounds(map.getBounds());
             });
 
             var markers = [];
             // Listen for the event fired when the user selects a prediction and retrieve
             // more details for that place.
-            searchBox.addListener('places_changed', function() {
+            searchBox.addListener('places_changed', function () {
                 var places = searchBox.getPlaces();
 
                 if (places.length == 0) {
@@ -74,14 +68,14 @@
                 }
 
                 // Clear out the old markers.
-                markers.forEach(function(marker) {
+                markers.forEach(function (marker) {
                     marker.setMap(null);
                 });
                 markers = [];
 
                 // For each place, get the icon, name and location.
                 var bounds = new google.maps.LatLngBounds();
-                places.forEach(function(place) {
+                places.forEach(function (place) {
                     if (!place.geometry) {
                         console.log("Returned place contains no geometry");
                         return;
@@ -110,6 +104,7 @@
                     }
                 });
                 map.fitBounds(bounds);
+                map.setOptions({zoom: 14});
             });
 
         };
@@ -186,11 +181,11 @@ var GMap = {
             );
             marker.setMap(map);
             var info =
-                    "<b>" + DataDA[i].name + "</b><br>" +
-                    DataDA[i].address +"<br>"+
-                    DataDA[i].phone +
-                    "<div class='button_map'>Favoriet</div>";
-            GMap.bindInfoWindow(marker, map, this.infowindow, info);
+                "<b>" + DataDA[i].name + "</b><br>" +
+                DataDA[i].address + "<br>" +
+                DataDA[i].phone +
+                '<div class="button_map" data-id="' + DataDA[i].id + '">Favoriet</div>';
+            GMap.bindInfoWindow(marker, map, this.infowindow, info, DataDA);
             this.DAarray.push(marker);
         }
     },
@@ -212,10 +207,11 @@ var GMap = {
             marker.setMap(map);
             var info =
                 "<b>" + DataDW[i].name + "</b><br>" +
-                DataDW[i].address +"<br>"+
-                DataDW[i].phone +
-                "<div class='button_map'>Favoriet</div>";
-            GMap.bindInfoWindow(marker, map, this.infowindow, info);
+                DataDW[i].address + "<br>" +
+                DataDW[i].phone
+                +
+                '<div class="button_map" data-id="' + DataDW[i].id + '">Favoriet</div>';
+            GMap.bindInfoWindow(marker, map, this.infowindow, info, DataDW);
             this.DWarray.push(marker);
         }
     },
@@ -237,10 +233,10 @@ var GMap = {
             marker.setMap(map);
             var info =
                 "<b>" + DataHK[i].name + "</b><br>" +
-                DataHK[i].address +"<br>"+
+                DataHK[i].address + "<br>" +
                 DataHK[i].phone +
-                "<div class='button_map'>Favoriet</div>";
-            GMap.bindInfoWindow(marker, map, this.infowindow, info);
+                '<div class="button_map" data-id="' + DataHK[i].id + '">Favoriet</div>';
+            GMap.bindInfoWindow(marker, map, this.infowindow, info, DataHK);
             this.HKarray.push(marker);
         }
     },
@@ -278,10 +274,31 @@ var GMap = {
             PAlayer.setMap(map);
         });
     },
-    bindInfoWindow: function (marker, map, infoWindow, html) {
+    bindInfoWindow: function (marker, map, infoWindow, html, data) {
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.setContent(html);
             infoWindow.open(map, marker);
+            document.querySelector('.button_map').addEventListener('click', function (ev) {
+                var id = this.dataset.id;
+                console.log("id: " + id);
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].id == id) {
+                        var favorieten = JSON.parse(localStorage.favorites);
+                        this.favorites = favorieten;
+                        console.log("init..");
+                        var obj = {
+                            "name": data[i].name,
+                            "address": data[i].address,
+                            "type": data[i].type
+                        };
+                        console.log(obj);
+                        this.favorites.push(obj);
+                        localStorage.setItem("favorites", JSON.stringify(this.favorites));
+
+                    }
+                }
+            });
         });
     }
 };
+

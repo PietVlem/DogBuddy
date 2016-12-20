@@ -1,65 +1,87 @@
 [
   {
+    "id": 1,
+    "type":"store",
     "name":"Maxi Zoo Gent",
     "coordinates":[51.055519,3.696113],
     "address": "Rooigemlaan 2",
     "phone": "09 226 54 86"
   },
   {
+    "id": 2,
+    "type":"store",
     "name":"Tom & Co",
     "coordinates":[51.053600,3.743914],
     "address": "Dendermondsesteenweg 134",
     "phone": "09 229 32 74"
   },
   {
+    "id": 3,
+    "type":"store",
     "name":"Tom & Co",
     "coordinates":[51.088377,3.709325],
     "address": "Botestraat 14",
     "phone": "09 253 76 50"
   },
   {
+    "id": 4,
+    "type":"store",
     "name":"Tom & Co",
     "coordinates":[51.048224,3.707855],
     "address": "Martelaarslaan 307",
     "phone": "09 233 98 92"
   },
   {
+    "id": 5,
+    "typ":"winkel",
     "name":"Baeten / Yves",
     "coordinates":[51.054412,3.752444],
     "address": "Oscar Colbrandstraat 30",
     "phone": "0472 39 81 17"
   },
   {
+    "id": 6,
+    "type":"store",
     "name":"Vitamex NV",
     "coordinates":[51.041671,3.602255],
     "address": "Booiebos 5",
     "phone": "09 280 29 00"
   },
   {
+    "id": 7,
+    "type":"store",
     "name":"Hondenkapsalon Tineke",
     "coordinates":[51.070147,3.682055],
     "address": "Brugsesteenweg 417",
     "phone": "0497 81 66 79"
   },
   {
+    "id": 8,
+    "type":"store",
     "name":"Vogelrijk",
     "coordinates":[51.162806,3.828021],
     "address": "Albert de Smetstraat 61/A",
     "phone": "09 345 67 44"
   },
   {
+    "id": 9,
+    "type":"store",
     "name":"Animales",
     "coordinates":[51.051905,3.668638],
     "address": "Veerstraat 55",
     "phone": "09 226 22 10"
   },
   {
+    "id": 10,
+    "type":"store",
     "name":"Maxi Zoo",
     "coordinates":[51.025723,3.771354],
     "address": "Brusselsesteenweg 2",
     "phone": "09 210 31 80"
   },
   {
+    "id": 11,
+    "type":"store",
     "name":"Dier en Bloem Aafi",
     "coordinates":[51.228056,3.800974],
     "address": "Westkade 94, 4551 CG Sas van Gent",

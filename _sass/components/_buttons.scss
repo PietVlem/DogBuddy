@@ -28,6 +28,13 @@ a .button{
   color: white;
   cursor: pointer;
   margin-top: 5px;
+  :hover{
+    background-color: #98d1c1;
+  }
+
+}
+.button_map:hover{
+  background-color: #98d1c1;
 }
 
 @media only screen and (max-device-width: 480px) {

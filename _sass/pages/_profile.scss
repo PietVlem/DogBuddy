@@ -4,17 +4,31 @@
   margin: auto;
 }
 
+#profile_content{
+  position: absolute;
+  height: 235px;
+  top:50%;
+  margin-top: -118px;
+}
+
 .profile_icon{
   width: 80px;
   display: block;
   margin: auto;
   padding-top: 40px;
 }
-#profile_info>p{
-  text-align: justify;
-  font-size: 12pt;
-  text-transform: uppercase;
-  line-height: 20pt;
+#profile_info{
+  margin-bottom: 50px;
+  p{
+    text-align: justify;
+    font-size: 12pt;
+    text-transform: uppercase;
+    line-height: 20pt;
+  }
+}
+
+#profile_content a div{
+  background-color: $green_dark;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -30,9 +44,7 @@
     #profile_content p{
       text-transform: uppercase;
     }
-    a{
 
-    }
 
   }
 }

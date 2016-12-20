@@ -3,8 +3,6 @@
  */
 
 (function(){
-
-
     //profile info
     if(window.location.pathname == '/profiel/'){
         console.log("init...");

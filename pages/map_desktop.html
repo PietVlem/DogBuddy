@@ -8,8 +8,8 @@ permalink   :   "/map_desktop/"
     <nav>
         <img src="../images/logo_white.png" alt="">
         <ul>
-            <li><a href="">zoeken</a></li>
-            <li><a href="">Favorieten</a></li>
+            <li><a href="{{site.baseurl}}/map_desktop/">zoeken</a></li>
+            <li><a href="{{site.baseurl}}/favorieten/">Favorieten</a></li>
         </ul>
         <a href="{{site.baseutl}}/profiel/"><img src="../images/Settings_gear.png" alt=""></a>
     </nav>
@@ -50,6 +50,8 @@ permalink   :   "/map_desktop/"
     <div id="map"></div>
 </main>
 
-<!--
-<script src="js/google_map.js"></script>
--->
+<script>
+    if(localStorage.getItem("Logged_in_usr_id") === null){
+        window.location = "../";
+    }
+</script>
