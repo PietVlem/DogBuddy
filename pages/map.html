@@ -6,17 +6,16 @@ permalink   :   "/map/"
 
 <main>
     <div class="nav_mobile">
-        <a href="home.html">
+        <a href="{{site.baseurl}}/home/">
             <img src="../images/logo_white.png" alt="">
             <span>Home</span>
         </a>
     </div>
-
-        <div id="map"></div>
+    <div id="map"></div>
 </main>
 
 <script>
-    if(localStorage.getItem("Logged_in_usr_id") === null){
+    if (localStorage.getItem("Logged_in_usr_id") === null) {
         window.location = "../";
     }
 </script>

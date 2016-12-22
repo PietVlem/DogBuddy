@@ -35,3 +35,41 @@
     max-height: 175px;
   }
 }
+
+@media only screen and (max-device-width: 480px) {
+  #feedback_div{
+    padding-top: 40px;
+    width: 80%;
+  }
+  .button{
+    width: 100%;
+    margin: auto;
+    background-color: $green_dark;
+  }
+  #form_feedback{
+    left: 0px;
+    width: 100%;
+    position: relative;
+    padding-top: 0px;
+    p{
+      color: $green_dark;
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      text-align: center;
+    }
+    #radio_div{
+      margin: 0px 0px;
+      display: inline-block;
+    }
+    label{
+      padding-left: 15px;
+      font-family: 'Lato', sans-serif;
+    }
+    textarea{
+      width: 340px;
+      max-width: 340px;
+      margin: 20px 30px;
+      max-height: 175px;
+    }
+  }
+}

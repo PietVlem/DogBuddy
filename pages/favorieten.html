@@ -4,7 +4,7 @@ title       :   "Favorieten Dogbuddy"
 permalink   :   "/favorieten/"
 ---
 
-<header>
+<header id="head">
     <nav>
         <img src="../images/logo_white.png" alt="">
         <ul>
@@ -15,8 +15,14 @@ permalink   :   "/favorieten/"
     </nav>
 </header>
 <main id="favo_main">
+    <div class="nav_mobile">
+        <a href="{{site.baseurl}}/home/">
+            <img src="../images/logo_white.png" alt="">
+            <span>Home</span>
+        </a>
+    </div>
     <div id="favo_div">
-        <h1 class="favo">Favorieten</h1>
+        <h1 style="" class="favo">Favorieten</h1>
         <table id="favoriten_tabel">
         </table>
     </div>
