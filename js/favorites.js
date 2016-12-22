@@ -23,6 +23,7 @@
             "<tr>" +
             "<td><img src='"+img+"'></td>" +
             "<td>"+ "<b>" + favorieten[i].name+"</b><br>" + favorieten[i].address +"</td>" +
+            "<td><img class='red_cross' src='../images/crossIcon_red.png' alt=''></td>"+
             "</tr>";
         tabel_favorieten.innerHTML = tabel_favorieten.innerHTML + content;
     }

@@ -1,4 +1,30 @@
-#favo{
+#favo_main{
+  //background-color: $beige;
+  max-height: 300vh;
+}
+#favo_div{
+  padding-top: 40px;
+  width: 400px;
+  margin: auto;
+  table{
+    width: 100%;
+  }
+}
+
+.favo{
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: $green_dark;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+
+
+.red_cross{
+  padding-top: 4px;
+  width: 25px;
+  cursor: pointer;
 }

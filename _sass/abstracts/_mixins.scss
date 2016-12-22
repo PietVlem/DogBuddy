@@ -6,7 +6,7 @@ a{
   text-decoration: none;
 }
 main{
-  height: calc(100vh - 48px);
+  min-height: calc(100vh - 48px);
   width: 100%;
   background-color: $beige;
 }

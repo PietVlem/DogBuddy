@@ -11,6 +11,11 @@
             "<p> Gebruiker: " + JSON.parse(localStorage.user_data)[localStorage.Logged_in_usr_id].usrname +"<br>"+
             "Geboortedatum: " + JSON.parse(localStorage.user_data)[localStorage.Logged_in_usr_id].birthdate+ "</p>";
         output_div.innerHTML = text;
+
+        var btn_logout = document.querySelector("#logout_btn");
+        btn_logout.onclick = function(){
+            localStorage.removeItem("Logged_in_usr_id");
+        }
     }
 
 
@@ -48,8 +53,4 @@
             }
         }
     }
-
-
-
-
 })();

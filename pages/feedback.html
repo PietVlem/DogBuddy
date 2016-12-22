@@ -1,0 +1,49 @@
+---
+layout      :   default
+title       :   "Feedback Dogbuddy"
+permalink   :   "/feedback/"
+---
+
+<header>
+    <nav>
+        <img src="../images/logo_white.png" alt="">
+        <ul>
+            <li><a href="{{site.baseurl}}/map_desktop/">zoeken</a></li>
+            <li><a href="{{site.baseurl}}/favorieten/">Favorieten</a></li>
+        </ul>
+        <a href="{{site.baseutl}}/profiel/"><img src="../images/Settings_gear.png" alt=""></a>
+    </nav>
+</header>
+<main>
+    <div id="feedback_div">
+        <H1 class="favo">Feedback</H1>
+        <form id="form_feedback" action="">
+            <p>Uw mening is Belangrijk! Bent u in het algemeen tevreden met de applicatie ?</p>
+            <div id="radio_div">
+                <input type="radio" name="mood" value="first_checkbox"><label> Bijzonder tevreden</label>
+                <br>
+                <input type="radio" name="mood" value="first_checkbox"> <label> Heel tevreden</label>
+                <br>
+                <input type="radio" name="mood" value="first_checkbox"><label> Tevreden</label>
+                <br>
+                <input type="radio" name="mood" value="first_checkbox"><label> Eerder ontevreden</label>
+                <br>
+                <input type="radio" name="mood" value="first_checkbox"> <label> Ontevreden</label>
+                <br>
+                <input type="radio" name="mood" value="first_checkbox"> <label> Zeer ontevreden</label>
+            </div>
+            <p>Uw mening is Belangrijk! Bent u in het algemeen tevreden met de applicatie ?</p>
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        </form>
+        <a href="">
+            <div id="btn_feedback" class="button">Verzenden</div>
+        </a>
+    </div>
+
+</main>
+
+<script>
+    document.querySelector("#btn_feedback").onclick = function(){
+        window.alert("Aangezien Githubpages geen php ondersteund is de informatie die je net hebt ingvuld volledig nutteloos. Toch leuk dat je geprobeerd hebt!");
+    }
+</script>
