@@ -1,11 +1,6 @@
 (function () {
 
-    /*
-     utils.getGEOLocationByPromise();
-     console.log(navigator.geolocation);
-     */
-
-    if (window.location.pathname == '/map_desktop/') {
+    if (window.location.pathname == '/map_desktop/' || window.location.pathname == '/map/') {
 
         //laden hv
         var dataHV = {};
@@ -44,153 +39,198 @@
         document.body.insertBefore(script, document.querySelector('#google_script'));
 
 
-        this.initGoogleMaps = function () {
-            GMap.initMap();
-            WRlayer = new google.maps.Data();
-            PAlayer = new google.maps.Data();
+        if (window.location.pathname == '/map_desktop/') {
+            this.initGoogleMaps = function () {
+                GMap.initMap();
+                WRlayer = new google.maps.Data();
+                PAlayer = new google.maps.Data();
 
-            var input = document.getElementById('search');
-            var searchBox = new google.maps.places.SearchBox(input);
+                var input = document.getElementById('search');
+                var searchBox = new google.maps.places.SearchBox(input);
 
-            // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function () {
-                searchBox.setBounds(map.getBounds());
-            });
-
-            var markers = [];
-            // Listen for the event fired when the user selects a prediction and retrieve
-            // more details for that place.
-            searchBox.addListener('places_changed', function () {
-                var places = searchBox.getPlaces();
-
-                if (places.length == 0) {
-                    return;
-                }
-
-                // Clear out the old markers.
-                markers.forEach(function (marker) {
-                    marker.setMap(null);
+                // Bias the SearchBox results towards current map's viewport.
+                map.addListener('bounds_changed', function () {
+                    searchBox.setBounds(map.getBounds());
                 });
-                markers = [];
 
-                // For each place, get the icon, name and location.
-                var bounds = new google.maps.LatLngBounds();
-                places.forEach(function (place) {
-                    if (!place.geometry) {
-                        console.log("Returned place contains no geometry");
+                var markers = [];
+                // Listen for the event fired when the user selects a prediction and retrieve
+                // more details for that place.
+                searchBox.addListener('places_changed', function () {
+                    var places = searchBox.getPlaces();
+
+                    if (places.length == 0) {
                         return;
                     }
-                    var icon = {
-                        url: place.icon,
-                        size: new google.maps.Size(71, 71),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(17, 34),
-                        scaledSize: new google.maps.Size(50, 50)
-                    };
 
-                    // Create a marker for each place.
-                    markers.push(new google.maps.Marker({
-                        map: map,
-                        icon: icon,
-                        title: place.name,
-                        position: place.geometry.location
-                    }));
+                    // Clear out the old markers.
+                    markers.forEach(function (marker) {
+                        marker.setMap(null);
+                    });
+                    markers = [];
 
-                    if (place.geometry.viewport) {
-                        // Only geocodes have viewport.
-                        bounds.union(place.geometry.viewport);
-                    } else {
-                        bounds.extend(place.geometry.location);
-                    }
+                    // For each place, get the icon, name and location.
+                    var bounds = new google.maps.LatLngBounds();
+                    places.forEach(function (place) {
+                        if (!place.geometry) {
+                            console.log("Returned place contains no geometry");
+                            return;
+                        }
+                        var icon = {
+                            url: place.icon,
+                            size: new google.maps.Size(71, 71),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(17, 34),
+                            scaledSize: new google.maps.Size(50, 50)
+                        };
+
+                        // Create a marker for each place.
+                        markers.push(new google.maps.Marker({
+                            map: map,
+                            icon: icon,
+                            title: place.name,
+                            position: place.geometry.location
+                        }));
+
+                        if (place.geometry.viewport) {
+                            // Only geocodes have viewport.
+                            bounds.union(place.geometry.viewport);
+                        } else {
+                            bounds.extend(place.geometry.location);
+                        }
+                    });
+                    map.fitBounds(bounds);
+                    map.setOptions({zoom: 14});
                 });
-                map.fitBounds(bounds);
-                map.setOptions({zoom: 14});
-            });
 
-        };
+            };
 
-        var test_btn = document.querySelector("#test_btn");
-        test_btn.onclick = function () {
-            GMap.hideMarkerHV();
-            GMap.hideMarkerDA();
-            GMap.hideMarkerStores();
-            GMap.hideMarkerBarber();
-            WRlayer.setMap(null);
-            PAlayer.setMap(null);
+            var test_btn = document.querySelector("#test_btn");
+            test_btn.onclick = function () {
+                GMap.hideMarkerHV();
+                GMap.hideMarkerDA();
+                GMap.hideMarkerStores();
+                GMap.hideMarkerBarber();
+                WRlayer.setMap(null);
+                PAlayer.setMap(null);
 
-            if (document.querySelector("#hVz").checked == true) {
+                if (document.querySelector("#hVz").checked == true) {
+                    GMap.addMarkerHV(dataHV);
+                }
+                if (document.querySelector("#Dierenartsen").checked == true) {
+                    GMap.addMarkerDoctors(DataDA);
+                }
+                if (document.querySelector("#dierenwinkels").checked == true) {
+                    GMap.addMarkerStores(DataDW);
+                }
+                if (document.querySelector("#hondenkappers").checked == true) {
+                    GMap.addMarkerBarber(DataHK);
+                }
+                if (document.querySelector("#parken").checked == true) {
+                    GMap.addParcAreas(PAlayer);
+                }
+                if (document.querySelector("#wandelroutes").checked == true) {
+                    GMap.addLinesWalkingRoutes(WRlayer);
+                }
+
+                if (window.innerWidth <= 480) {
+                    document.querySelector("#map").style.display = "block";
+
+                    currentYPosition();
+                    elmYPosition('map');
+                    smoothScroll('map');
+
+                    function currentYPosition() {
+                        // Firefox, Chrome, Opera, Safari
+                        if (self.pageYOffset) return self.pageYOffset;
+                        // Internet Explorer 6 - standards mode
+                        if (document.documentElement && document.documentElement.scrollTop)
+                            return document.documentElement.scrollTop;
+                        // Internet Explorer 6, 7 and 8
+                        if (document.body.scrollTop) return document.body.scrollTop;
+                        return 0;
+                    }
+
+                    function elmYPosition(eID) {
+                        var elm = document.getElementById(eID);
+                        var y = elm.offsetTop;
+                        var node = elm;
+                        while (node.offsetParent && node.offsetParent != document.body) {
+                            node = node.offsetParent;
+                            y += node.offsetTop;
+                        }
+                        return y;
+                    }
+
+                    function smoothScroll(eID) {
+                        var startY = currentYPosition();
+                        var stopY = elmYPosition(eID);
+                        var distance = stopY > startY ? stopY - startY : startY - stopY;
+                        if (distance < 100) {
+                            scrollTo(0, stopY);
+                            return;
+                        }
+                        var speed = Math.round(distance / 100);
+                        if (speed >= 20) speed = 10;
+                        var step = Math.round(distance / 25);
+                        var leapY = stopY > startY ? startY + step : startY - step;
+                        var timer = 0;
+                        if (stopY > startY) {
+                            for (var i = startY; i < stopY; i += step) {
+                                setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+                                leapY += step;
+                                if (leapY > stopY) leapY = stopY;
+                                timer++;
+                            }
+                            return;
+                        }
+                        for (var i = startY; i > stopY; i -= step) {
+                            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+                            leapY -= step;
+                            if (leapY < stopY) leapY = stopY;
+                            timer++;
+                        }
+                    }
+
+                }
+            };
+        }
+        if (window.location.pathname == '/map/') {
+            var mappe = document.querySelector('#map');
+            mappe.style.display = "block";
+            mappe.style.height = "calc(100vh - 50px)";
+            this.initGoogleMaps = function () {
+                PAlayer = new google.maps.Data();
+                GMap.initMap();
                 GMap.addMarkerHV(dataHV);
-            }
-            if (document.querySelector("#Dierenartsen").checked == true) {
                 GMap.addMarkerDoctors(DataDA);
-            }
-            if (document.querySelector("#dierenwinkels").checked == true) {
                 GMap.addMarkerStores(DataDW);
-            }
-            if (document.querySelector("#hondenkappers").checked == true) {
                 GMap.addMarkerBarber(DataHK);
-            }
-            if (document.querySelector("#parken").checked == true) {
                 GMap.addParcAreas(PAlayer);
-            }
-            if (document.querySelector("#wandelroutes").checked == true) {
-                GMap.addLinesWalkingRoutes(WRlayer);
-            }
 
-            if (window.innerWidth <= 480){
-                document.querySelector("#map").style.display = "block";
 
-                currentYPosition();
-                elmYPosition('map');
-                smoothScroll('map');
+                utils.getGEOLocationByPromise;
 
-                function currentYPosition() {
-                    // Firefox, Chrome, Opera, Safari
-                    if (self.pageYOffset) return self.pageYOffset;
-                    // Internet Explorer 6 - standards mode
-                    if (document.documentElement && document.documentElement.scrollTop)
-                        return document.documentElement.scrollTop;
-                    // Internet Explorer 6, 7 and 8
-                    if (document.body.scrollTop) return document.body.scrollTop;
-                    return 0;
+                /*
+                var c = function(pos){
+                    var lat = pos.coords.latitude
                 }
 
-                function elmYPosition(eID) {
-                    var elm = document.getElementById(eID);
-                    var y = elm.offsetTop;
-                    var node = elm;
-                    while (node.offsetParent && node.offsetParent != document.body) {
-                        node = node.offsetParent;
-                        y += node.offsetTop;
-                    } return y;
-                }
+                navigator.geolocation.getCurrentPosition(c);
+                */
 
-                function smoothScroll(eID) {
-                    var startY = currentYPosition();
-                    var stopY = elmYPosition(eID);
-                    var distance = stopY > startY ? stopY - startY : startY - stopY;
-                    if (distance < 100) {
-                        scrollTo(0, stopY); return;
-                    }
-                    var speed = Math.round(distance / 100);
-                    if (speed >= 20) speed = 20;
-                    var step = Math.round(distance / 25);
-                    var leapY = stopY > startY ? startY + step : startY - step;
-                    var timer = 0;
-                    if (stopY > startY) {
-                        for ( var i=startY; i<stopY; i+=step ) {
-                            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-                            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-                        } return;
-                    }
-                    for ( var i=startY; i>stopY; i-=step ) {
-                        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-                        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+                /*
+                function get_location() {
+                    if (Modernizr.geolocation) {
+                        console.log(navigator.geolocation);
+                    } else {
+                        console.log("no geo location");
                     }
                 }
-
+                */
             }
-        };
+        }
+
     }
 })();
 
