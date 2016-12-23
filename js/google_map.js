@@ -191,11 +191,11 @@
                             timer++;
                         }
                     }
-
                 }
             };
         }
         if (window.location.pathname == '/map/') {
+            utils.getGEOLocationByPromise;
             var mappe = document.querySelector('#map');
             mappe.style.display = "block";
             mappe.style.height = "calc(100vh - 50px)";
@@ -208,26 +208,22 @@
                 GMap.addMarkerBarber(DataHK);
                 GMap.addParcAreas(PAlayer);
 
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        map.setOptions({zoom: 16});
 
-                utils.getGEOLocationByPromise;
-
-                /*
-                var c = function(pos){
-                    var lat = pos.coords.latitude
+                        map.setCenter(pos);
+                    }, function() {
+                        window.alert("U gaf geen toestemming om uw loactie te weergeven!");
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    window.alert("browser does not support sharing your location");
                 }
-
-                navigator.geolocation.getCurrentPosition(c);
-                */
-
-                /*
-                function get_location() {
-                    if (Modernizr.geolocation) {
-                        console.log(navigator.geolocation);
-                    } else {
-                        console.log("no geo location");
-                    }
-                }
-                */
             }
         }
 
