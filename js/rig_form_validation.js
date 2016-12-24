@@ -7,7 +7,6 @@
     };
 
     function handleFormSubmit() {
-        event.preventDefault();
 
         //waarden uit velden halen
         var username = form_reg[name = "usrname"].value;

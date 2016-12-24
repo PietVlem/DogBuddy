@@ -4,13 +4,12 @@
 
     document.querySelector("#login_btn").addEventListener('click', function () {
         handleFormSubmitLogIn();
-    });
+    }, false);
     document.querySelector("#login_btn").addEventListener('touchstart', function () {
         handleFormSubmitLogIn();
-    });
+    }, false);
 
     function handleFormSubmitLogIn() {
-        event.preventDefault();
 
         var usrname = inlogForm[name = "login"].value;
         var password = inlogForm[name = "password"].value;
