@@ -44,8 +44,7 @@
                     }
                 }
             }
-        }
-        ;
+        };
         if (count == local_storage_usrs.length) {
             window.alert("username and/or password are incorrect");
 
