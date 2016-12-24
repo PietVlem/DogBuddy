@@ -2,9 +2,12 @@
 
     var inlogForm = document.querySelector("#inlogForm");
 
-    inlogForm.onsubmit = function () {
+    document.querySelector("#login_btn").addEventListener('click', function () {
         handleFormSubmitLogIn();
-    };
+    });
+    document.querySelector("#login_btn").addEventListener('touchstart', function () {
+        handleFormSubmitLogIn();
+    });
 
     function handleFormSubmitLogIn() {
         event.preventDefault();
