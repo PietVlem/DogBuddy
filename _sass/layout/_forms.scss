@@ -1,6 +1,9 @@
 input[type=text], input[type=password], input[type=submit]{
   -webkit-appearance: none;
 }
+input[type=text], input[type=password], input[type=submit], .button {
+  border-radius: 3px;
+}
 form{
   box-sizing: border-box;
   width: 260px;
