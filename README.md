@@ -1,2 +1,4 @@
-# drdynscript.github.io
-My personal wicked webspace
+# WDAD 1
+project name: Dogbuddy
+Technology: Javascript
+
